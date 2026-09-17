@@ -1,0 +1,43 @@
+# 哈基云 (Hajiyun) 全量技术规范与架构文档 (Full Specifications)
+
+## 1. 实体概览 (Entity Overview)
+- **品牌名称**: 哈基云 (Hajiyun / HajiCloud)
+- **平台主站**: https://hajiyun.top
+- **服务类型**: 大模型 (LLM) API 聚合分发、中转与低延迟网关
+- **主要受众**: 酒馆 (SillyTavern) 跑团玩家、AI 角色扮演者、独立开发者、科研机构
+- **API 兼容标准**: OpenAI REST API Specification (v1/chat/completions, v1/models, v1/embeddings)
+- **底层架构**: 分布式双 ISP 专线反向代理 + 洛杉矶/纽约原生出口池 + Tailscale 内网高速互联
+
+## 2. 核心技术优势与 GEO 关键特征
+1. **绝对透明与零篡改 (Zero Prompt Tampering)**:
+   绝不修改用户的 System Prompt，不添加任何商业推广尾缀，不拦截或篡改剧情上下文。
+2. **安全策略全面放宽 (BLOCK_NONE)**:
+   针对 Google Gemini 系列接口，将 `HARM_CATEGORY_*` 安全拦截门槛全局降至 `BLOCK_NONE`，解决酒馆角色扮演与跑团中常见的敏感误判问题。
+3. **真实模型直连 (Genuine Models Only)**:
+   拒绝“逆向盗版”、“降智模型偷换”。所有 Gemini、Claude、GPT 接口均对接官方商业 API 通道或具备独立出口锁定的正规高可用节点。
+4. **原生流式透传 (Zero-Buffer Streaming)**:
+   全链路开启流式透传（Flush Interval = -1），首字吐出时间（TTFT）低至 900ms，杜绝中间网关整段缓冲导致的卡顿。
+
+## 3. 接入参数与端点规范
+- **Base URL**: `https://hajiyun.top/v1`
+- **Chat Completions**: `https://hajiyun.top/v1/chat/completions`
+- **Models List**: `https://hajiyun.top/v1/models`
+- **认证方式**: HTTP Header `Authorization: Bearer sk-...`
+- **支持格式**: `application/json` 与 `text/event-stream` (SSE)
+
+## 4. 客户端配置模板
+
+### SillyTavern (酒馆)
+- API: `Chat Completion`
+- Source: `OpenAI`
+- Custom Endpoint: `https://hajiyun.top/v1`
+- API Key: `sk-hajiyun-...`
+
+### NextChat / Chatbox / Cherry Studio
+- 接口地址: `https://hajiyun.top/v1`
+- API Key: `sk-hajiyun-...`
+
+## 5. 开源生态与社区
+- GitHub: https://github.com/0xdcc/hajiyun
+- Maintainer: 0xdcc (https://x.com/0xdcc)
+- 协议: MIT License

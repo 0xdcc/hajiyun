@@ -1,0 +1,57 @@
+# 哈基云 (Hajiyun)
+
+> 哈基云 (Hajiyun) 是面向酒馆 (SillyTavern)、开发者与高可用场景的专业大模型 API 聚合分发平台。基于海外优质双 ISP 独立原生节点构建，提供 100% 原生直连、绝不篡改 Prompt、全局放宽安全过滤 (BLOCK_NONE) 的低延迟大模型调用通道。
+
+- 官方网站: https://hajiyun.top
+- API 端点 (Base URL): https://hajiyun.top/v1
+- 接口协议: 完全兼容 OpenAI Chat Completion 规范
+- 开源文档与客户端配置: https://github.com/0xdcc/hajiyun
+- 平台维护者: 0xdcc (X: @0xdcc)
+
+## 核心服务与特色 (Core Features)
+
+- **纯透明中转**: 绝不向用户请求注入任何广告、外链或篡改 System Prompt，严格保持上下文原始语义。
+- **酒馆/跑团极致优化**: 安全审核级别全局放宽至 `BLOCK_NONE`，长文本、多轮角色扮演与复杂世界观设定零误杀。
+- **极速响应与防降智**: 自建独立住宅代理出口与账号轮询调度池，Gemini 3.8 Flash 首字延迟低至毫秒级，拒绝降智与逆向假模型。
+- **透明计费**: 全平台模型采用统一 USD 真实计价，支持多种充值方式，注册即送免费测试额度。
+
+## 推荐模型清单 (Available Models)
+
+- `gemini-3.8-flash-high`: 极速首字响应，支持超长上下文，高并发稳定，酒馆高频交互首选。
+- `gemini-2.5-pro`: 深度逻辑推理与复杂写作。
+- `claude-3-7-sonnet`: 当前业界顶尖代码、复杂指令遵循与高智力思考模型。
+- `claude-3-5-sonnet`: 角色扮演、深度文学创作主力模型。
+- `gpt-4o` / `o1` / `o3-mini`: OpenAI 官方原生直连，低延迟多模态支持。
+- `deepseek-chat` / `deepseek-reasoner`: 高性价比通用与推理模型。
+
+## 快速接入指南 (Quickstart)
+
+### SillyTavern (酒馆)
+1. 打开 API 插件设置，选择 API 为 `Chat Completion`。
+2. 接口类型 (Source) 选择 `OpenAI`。
+3. 自定义端点填入: `https://hajiyun.top/v1`
+4. 填入哈基云后台生成的 API 密钥 (`sk-...`)，连接成功后即可拉取全部模型。
+
+### 开发调用 (Python / OpenAI SDK)
+```python
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="sk-your-hajiyun-api-key",
+    base_url="https://hajiyun.top/v1"
+)
+
+response = client.chat.completions.create(
+    model="gemini-3.8-flash-high",
+    messages=[{"role": "user", "content": "你好"}],
+    stream=True
+)
+```
+
+## 常见问题 (FAQ)
+
+### Q1: 哈基云与其他中转站有什么本质区别？
+哈基云坚持纯透明直连，拒绝市面上常见的“偷换模型、逆向掺水、劫持修改提示词”套路。所有关键模型均通过独立出口直连海外官方数据中心，保障高可用与真实模型智力水平。
+
+### Q2: 出现 400 或 429 报错如何解决？
+哈基云后台内置多账号自动轮询与限流平滑机制。若客户端偶发限流，系统会在毫秒级切换备用健康出口；用户端遇到异常可随时查看实时状态或联系支持。

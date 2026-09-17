@@ -1,0 +1,36 @@
+User-agent: *
+Allow: /
+Allow: /custom-home/
+Allow: /pricing
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /api/
+Disallow: /admin/
+Disallow: /console/
+
+# Welcome AI & LLM Search Crawlers (Generative Engine Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+Sitemap: https://hajiyun.top/sitemap.xml
