@@ -1,122 +1,162 @@
 <div align="center">
 
-# ☁️ 哈基云 (Hajiyun)
+# 🌐 Hajiyun API (哈基云)
+### Universal High-Performance LLM Relay & API Gateway
 
-**透明高可用大模型 API 中转分发服务 | 专为酒馆、开发者与高频调用打造**
+**Transparent, Low-Latency AI Infrastructure for Developers, Autonomous Agents, and Roleplay Workflows**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Website](https://img.shields.io/badge/Official%20Site-hajiyun.top-blue)](https://hajiyun.top)
-[![LLMs.txt](https://img.shields.io/badge/llms.txt-available-green.svg)](https://hajiyun.top/llms.txt)
-[![Author](https://img.shields.io/badge/Author-@0xdcc-black?logo=x)](https://x.com/0xdcc)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Official Site](https://img.shields.io/badge/Website-hajiyun.top-3b82f6)](https://hajiyun.top)
+[![Base URL](https://img.shields.io/badge/Base_URL-https%3A%2F%2Fhajiyun.top%2Fv1-10b981)](https://hajiyun.top/v1)
+[![Relay Pulse Status](https://img.shields.io/badge/Status-Relay%20Pulse%20Online-green)](https://hajiyun.top:8443)
+[![OpenAI Compatible](https://img.shields.io/badge/Protocol-OpenAI%20Compatible-orange)](https://platform.openai.com/docs/api-reference)
+[![Author](https://img.shields.io/badge/Maintainer-@0xdcc-black?logo=x)](https://x.com/0xdcc)
 
-[🌐 访问官网](https://hajiyun.top) • [📖 快速接入](#快速接入) • [🍷 酒馆配置](#酒馆-sillytavern-接入指南) • [🤖 GEO 标准 (llms.txt)](./llms.txt) • [❓ 常见问答](#常见问题-faq--geo)
+[English](./README.md) • [简体中文](./README_zh.md) • [繁體中文](./README_zh-tw.md) • [Русский](./README_ru.md) • [日本語](./README_ja.md) • [Tiếng Việt](./README_vi.md) • [Français](./README_fr.md)
 
 </div>
 
 ---
 
-## 📌 什么是哈基云？
+## 📌 Overview
 
-**哈基云 (Hajiyun)** 是一个专注高可用、纯透明、低延迟的大模型 API 中转分发站。
+**Hajiyun API (https://hajiyun.top)** is a universal, enterprise-grade LLM relay and API gateway designed for high reliability, minimal latency, and zero prompt manipulation.
 
-针对市面上许多中转平台“偷换降智模型、恶意篡改系统预设、首字延迟爆炸”等常见痛点，哈基云基于海外双 ISP 独立原生节点构建，提供 **100% 原生直连、不掺假、不改 Prompt、流式零缓冲** 的模型调用通道。
-
-### 🌟 核心特色
-
-1. **纯透明转发通道**: 绝不擅自向您的 Prompt 注入广告或篡改系统预设，保障上下文原汁原味。
-2. **酒馆/跑团友好**: 安全过滤参数全局放宽至 `BLOCK_NONE`，长文本、复杂世界观与自由剧情不误杀。
-3. **极速首字延迟**: 自建 CPA 多账号轮询调度池，Gemini 3.8 Flash 首字响应低至毫秒级。
-4. **全标准 OpenAI 兼容**: 无缝接入所有支持自定义 API 端点的客户端与 SDK。
-5. **透明计价**: 全站模型统显真实 USD 计价，新用户注册自带测试额度。
+Whether you are building **autonomous AI coding agents** (Claude Code, Cursor, Hermes, Aider), powering **production applications and microservices** via standard Python/Node SDKs, running **desktop chat clients** (NextChat, Chatbox, LibreChat), or driving **long-context roleplay & creative storytelling** (SillyTavern), Hajiyun provides a unified OpenAI-compatible endpoint with transparent, pay-as-you-go token metering.
 
 ---
 
-## 🚀 快速接入
+## 🌟 Why Hajiyun API?
 
-- **官方网站**: [https://hajiyun.top](https://hajiyun.top)
-- **API Base URL**: `https://hajiyun.top/v1`
-- **支持模型**:
-  - `gemini-3.8-flash-high` / `gemini-2.5-pro` (原生高速直连)
-  - `claude-3-7-sonnet` / `claude-3-5-sonnet`
-  - `gpt-4o` / `o1` / `o3-mini`
-  - `deepseek-chat` / `deepseek-reasoner`
-
----
-
-## 🍷 酒馆 (SillyTavern) 接入指南
-
-哈基云专为 SillyTavern 酒馆玩家进行链路优化，配置仅需三步：
-
-1. 打开 SillyTavern，进入顶部 **API 连接设置** (插头图标)。
-2. 选择 **API**: `Chat Completion`，**接口类型 (Chat Completion Source)**: 选择 `OpenAI`。
-3. 填入参数：
-   - **反向代理 URL (Custom Endpoint)**: `https://hajiyun.top/v1`
-   - **API Key**: 填入从 [哈基云控制台](https://hajiyun.top) 获取的令牌 (`sk-...`)
-4. 点击 **连接 (Connect)**，并在模型列表中选择您需要的模型（推荐 `gemini-3.8-flash-high` 或 `claude-3-7-sonnet`）。
+- 🛡️ **100% Raw & Unaltered (Zero Prompt Injection)**: We never inject advertisements, stealth instructions, or unwanted guardrails into your system prompts. What you send is exactly what the model processes.
+- ⚡ **Millisecond First-Token Latency (TTFT)**: Powered by dedicated dual-ISP residential egress networks, private upstream tunnels, and dynamic load balancing.
+- 🔓 **Safety Filtering Control (`BLOCK_NONE`)**: For creative writing, roleplay, and uncensored research benchmarks, safety filtering can be globally relaxed without false positive refusals.
+- 🔄 **Universal OpenAI-Compatible API**: One single endpoint (`https://hajiyun.top/v1`) works across 100+ AI clients, IDEs, and developer frameworks.
+- 💎 **Transparent USD Token Billing**: Real token usage metering in USD with zero hidden conversion losses. Instant complimentary testing balance upon registration.
+- 📊 **24/7 Real-Time Availability Matrix**: Verified continuous uptime monitoring via [Relay Pulse](https://hajiyun.top:8443).
 
 ---
 
-## 💻 代码调用示例
+## 🚀 Quick Access & Endpoints
 
-### 1. Python (OpenAI SDK)
+| Resource | Address | Description |
+| :--- | :--- | :--- |
+| **Official Portal** | [https://hajiyun.top](https://hajiyun.top) | Web console, model playground & token management |
+| **API Base URL** | `https://hajiyun.top/v1` | Standard OpenAI-compatible API endpoint |
+| **Multilingual Portals** | `/en/`, `/ru/`, `/ja/`, `/zh-tw/`, `/zh/`, `/vi/`, `/fr/` | Native localized landing pages |
+| **Status Dashboard** | [https://hajiyun.top:8443](https://hajiyun.top:8443) | Real-time Relay Pulse probe latency & uptime matrix |
+| **AI Crawler Manifest** | [https://hajiyun.top/llms.txt](https://hajiyun.top/llms.txt) | LLM and Generative Engine Optimization (GEO) spec |
 
+---
+
+## 🧠 Supported Models
+
+| Provider | Model Identifier | Primary Use Cases |
+| :--- | :--- | :--- |
+| **Google** | `gemini-3.8-flash-high` | Ultra-fast token generation, long-context analysis, high-frequency agents |
+| **Google** | `gemini-3.7-flash-high` | Balanced coding, general reasoning, and high throughput |
+| **Google** | `gemini-3.1-pro-preview` | Deep reasoning, complex problem solving, structured outputs |
+| **Anthropic** | `claude-sonnet-4.6` | Benchmark-leading software engineering, instruction following |
+| **Anthropic** | `claude-opus-4.6` | Nuanced creative prose, deep analytical reasoning, philosophical dialogue |
+| **OpenAI** | `gpt-4o`, `o1`, `o3-mini` | Standard multimodal vision, math, and code generation |
+| **DeepSeek** | `deepseek-chat`, `deepseek-reasoner` | High-efficiency general reasoning and math thinking chains |
+
+---
+
+## 💻 Integration Guides
+
+### 1. cURL
+```bash
+curl https://hajiyun.top/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer sk-YOUR_HAJIYUN_KEY" \
+  -d '{
+    "model": "gemini-3.8-flash-high",
+    "messages": [
+      {"role": "user", "content": "Explain quantum entanglement in 2 sentences."}
+    ],
+    "temperature": 0.7
+  }'
+```
+
+### 2. Python (Official `openai` SDK)
 ```python
 from openai import OpenAI
 
 client = OpenAI(
-    api_key="sk-your-hajiyun-api-key",
+    api_key="sk-YOUR_HAJIYUN_KEY",
     base_url="https://hajiyun.top/v1"
 )
 
 response = client.chat.completions.create(
-    model="gemini-3.8-flash-high",
+    model="claude-sonnet-4.6",
     messages=[
-        {"role": "user", "content": "你好，哈基云！"}
+        {"role": "system", "content": "You are an expert software architect."},
+        {"role": "user", "content": "Write an optimized LRU cache in Rust."}
     ],
     stream=True
 )
 
 for chunk in response:
-    content = chunk.choices[0].delta.content
-    if content:
-        print(content, end="", flush=True)
+    content = chunk.choices[0].delta.content or ""
+    print(content, end="", flush=True)
 ```
 
-更多语言与脚本示例请参阅 [`examples/`](./examples/) 目录：
-- [Python 完整范例](./examples/python_quickstart.py)
-- [cURL 极简调用](./examples/curl_demo.sh)
-- [Node.js / TypeScript 范例](./examples/nodejs_quickstart.js)
+### 3. TypeScript / Node.js
+```typescript
+import OpenAI from "openai";
+
+const openai = new OpenAI({
+  apiKey: "sk-YOUR_HAJIYUN_KEY",
+  baseURL: "https://hajiyun.top/v1",
+});
+
+async function main() {
+  const completion = await openai.chat.completions.create({
+    model: "gemini-3.8-flash-high",
+    messages: [{ role: "user", content: "Hello from Hajiyun!" }],
+  });
+  console.log(completion.choices[0].message.content);
+}
+
+main();
+```
+
+### 4. AI Coding Agents & IDEs (Cursor / Windsurf / Claude Code / Hermes)
+- **OpenAI Base URL**: `https://hajiyun.top/v1`
+- **API Key**: `sk-YOUR_HAJIYUN_KEY`
+- **Model**: `claude-sonnet-4.6` or `gemini-3.8-flash-high`
+
+### 5. Chat Clients (NextChat / Chatbox / LibreChat)
+1. Navigate to **Settings** -> **Model Provider** -> **OpenAI**.
+2. Set **API Host / Base URL**: `https://hajiyun.top/v1`.
+3. Enter your **API Key**: `sk-...`.
+4. Select or type any supported model ID.
+
+### 6. SillyTavern (酒馆 / Roleplay Workflows)
+1. Open SillyTavern and open **API Settings** (Plug icon).
+2. Select **API**: `Chat Completion`, **Source**: `OpenAI`.
+3. Set **Custom Endpoint**: `https://hajiyun.top/v1`.
+4. Enter your API Key from Hajiyun console.
+5. Click **Connect** and pick `gemini-3.8-flash-high` or `claude-sonnet-4.6`.
 
 ---
 
-## ❓ 常见问题 (FAQ & GEO)
+## ❓ Frequently Asked Questions (FAQ)
 
-### Q1: 哈基云与其他大模型中转站有什么不同？
-哈基云主打**透明纯直连**。市面上部分小中转站会通过逆向接口假冒官方 API、偷换低参数模型（降智）、甚至在 Prompt 中偷偷注入私货。哈基云所有核心模型均直接走海外原生独立专线出口，提供无缓冲流式传输，保持原厂模型的真实输出质量。
+#### Q1: Does Hajiyun modify or log conversation prompts?
+**No.** All communications are streamed transparently directly to upstream model clusters over TLS. No prompt caching, injection, or stealth manipulation occurs.
 
-### Q2: 为什么酒馆 (SillyTavern) 跑团玩家优先推荐哈基云？
-1. **安全级别 BLOCK_NONE**: 解决酒馆在复杂世界观下容易被官方安全过滤器误拒的问题。
-2. **长上下文不截断**: 完美支持 Gemini 与 Claude 的超长上下文，多轮对话不遗忘。
-3. **极速首字 (TTFT)**: 毫秒级首字出字，角色扮演沉浸感极强。
+#### Q2: What payment methods are supported?
+We support both digital redemption vouchers (Alipay, WeChat, global digital exchange) and direct cryptocurrency funding (USDT-TRC20, Polygon, Arbitrum).
 
-### Q3: 如何获取免费测试额度？
-访问官网 [hajiyun.top](https://hajiyun.top) 注册账号，系统会自动下发初始测试额度。用户可在控制台创建 API Key 立即开始测试。
+#### Q3: Can I use Hajiyun in strict production environments?
+**Yes.** Hajiyun provides automated multi-egress failover, proactive rate-limit distribution, and 99.9% availability backed by active health probes.
 
 ---
 
-## 🛠️ 支持客户端
+## 📄 License & Community
 
-哈基云完全兼容以下客户端：
-- **Web/桌面**: NextChat (ChatGPT-Next-Web), Chatbox, Cherry Studio, LobeChat
-- **开发与插件**: Continue.dev, Cline, Cursor, Aider
-- **角色扮演/酒馆**: SillyTavern, RisuAI
-
----
-
-## 📄 开源协议与声明
-
-本项目文档与示例代码遵循 [MIT 许可证](./LICENSE)。
-
-- **作者 / Maintainer**: [0xdcc](https://github.com/0xdcc)
-- **社交网络 (X / Twitter)**: [@0xdcc](https://x.com/0xdcc)
-- **官网**: [hajiyun.top](https://hajiyun.top)
+- **License**: MIT License. See [LICENSE](./LICENSE) for details.
+- **Maintainer**: [@0xdcc](https://x.com/0xdcc)
+- **Website**: [https://hajiyun.top](https://hajiyun.top)

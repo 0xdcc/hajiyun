@@ -1,14 +1,31 @@
 User-agent: *
 Allow: /
+Allow: /en/
+Allow: /ru/
+Allow: /ja/
+Allow: /zh-tw/
+Allow: /zh/
+Allow: /vi/
+Allow: /fr/
 Allow: /custom-home/
 Allow: /pricing
+Allow: /about
 Allow: /llms.txt
 Allow: /llms-full.txt
 Disallow: /api/
 Disallow: /admin/
 Disallow: /console/
 
-# Welcome AI & LLM Search Crawlers (Generative Engine Optimization)
+# Search Engine & AI Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 

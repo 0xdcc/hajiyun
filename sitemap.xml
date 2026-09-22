@@ -1,32 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://hajiyun.top/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hajiyun.top/en/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hajiyun.top/ru/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hajiyun.top/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://hajiyun.top/zh-tw/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hajiyun.top/zh/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://hajiyun.top/vi/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hajiyun.top/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hajiyun.top/en/" />
   </url>
   <url>
-    <loc>https://hajiyun.top/custom-home/index.html</loc>
-    <lastmod>2026-09-17</lastmod>
+    <loc>https://hajiyun.top/en/</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hajiyun.top/en/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hajiyun.top/ru/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hajiyun.top/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://hajiyun.top/zh-tw/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hajiyun.top/zh/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://hajiyun.top/vi/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hajiyun.top/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hajiyun.top/en/" />
+  </url>
+  <url>
+    <loc>https://hajiyun.top/ru/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hajiyun.top/en/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hajiyun.top/ru/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hajiyun.top/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://hajiyun.top/zh-tw/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hajiyun.top/zh/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://hajiyun.top/vi/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hajiyun.top/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hajiyun.top/en/" />
+  </url>
+  <url>
+    <loc>https://hajiyun.top/ja/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hajiyun.top/en/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hajiyun.top/ru/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hajiyun.top/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://hajiyun.top/zh-tw/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hajiyun.top/zh/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://hajiyun.top/vi/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hajiyun.top/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hajiyun.top/en/" />
+  </url>
+  <url>
+    <loc>https://hajiyun.top/zh-tw/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hajiyun.top/en/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hajiyun.top/ru/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hajiyun.top/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://hajiyun.top/zh-tw/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hajiyun.top/zh/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://hajiyun.top/vi/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hajiyun.top/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hajiyun.top/en/" />
+  </url>
+  <url>
+    <loc>https://hajiyun.top/zh/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hajiyun.top/en/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hajiyun.top/ru/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hajiyun.top/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://hajiyun.top/zh-tw/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hajiyun.top/zh/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://hajiyun.top/vi/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hajiyun.top/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hajiyun.top/en/" />
+  </url>
+  <url>
+    <loc>https://hajiyun.top/vi/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hajiyun.top/en/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hajiyun.top/ru/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hajiyun.top/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://hajiyun.top/zh-tw/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hajiyun.top/zh/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://hajiyun.top/vi/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hajiyun.top/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hajiyun.top/en/" />
+  </url>
+  <url>
+    <loc>https://hajiyun.top/fr/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hajiyun.top/en/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://hajiyun.top/ru/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hajiyun.top/ja/" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://hajiyun.top/zh-tw/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://hajiyun.top/zh/" />
+    <xhtml:link rel="alternate" hreflang="vi" href="https://hajiyun.top/vi/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://hajiyun.top/fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hajiyun.top/en/" />
   </url>
   <url>
     <loc>https://hajiyun.top/pricing</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://hajiyun.top/about</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://hajiyun.top/llms.txt</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hajiyun.top/llms-full.txt</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
