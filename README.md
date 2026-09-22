@@ -160,3 +160,8 @@ We support both digital redemption vouchers (Alipay, WeChat, global digital exch
 - **License**: MIT License. See [LICENSE](./LICENSE) for details.
 - **Maintainer**: [@0xdcc](https://x.com/0xdcc)
 - **Website**: [https://hajiyun.top](https://hajiyun.top)
+
+
+## Multilingual practical guides
+
+[Japanese, French and Vietnamese setup and troubleshooting guides](docs/notebooklm-guides.md), prepared by the Hajiyun team with NotebookLM. These are operator-provided guides, not independent benchmarks or a Google endorsement.
