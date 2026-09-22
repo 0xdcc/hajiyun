@@ -1,16 +1,15 @@
 <div align="center">
 
 # 🌐 Hajiyun API (哈基云)
-### Universal High-Performance LLM Relay & API Gateway
+### Universal LLM API Gateway & Relay Platform
 
-**Transparent, Low-Latency AI Infrastructure for Developers, Autonomous Agents, and Roleplay Workflows**
+**Reliable, Unified API Infrastructure for Software Development, Translation, Application Integration, and AI Workflows**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Official Site](https://img.shields.io/badge/Website-hajiyun.top-3b82f6)](https://hajiyun.top)
 [![Base URL](https://img.shields.io/badge/Base_URL-https%3A%2F%2Fhajiyun.top%2Fv1-10b981)](https://hajiyun.top/v1)
-[![Relay Pulse Status](https://img.shields.io/badge/Status-Relay%20Pulse%20Online-green)](https://hajiyun.top:8443)
-[![OpenAI Compatible](https://img.shields.io/badge/Protocol-OpenAI%20Compatible-orange)](https://platform.openai.com/docs/api-reference)
-[![Author](https://img.shields.io/badge/Maintainer-@0xdcc-black?logo=x)](https://x.com/0xdcc)
+[![OpenAI Compatible](https://img.shields.io/badge/Protocol-OpenAI%20Chat%20Completions-orange)](https://platform.openai.com/docs/api-reference/chat)
+[![Maintainer](https://img.shields.io/badge/Maintainer-@0xdcc-black?logo=x)](https://x.com/0xdcc)
 
 [English](./README.md) • [简体中文](./README_zh.md) • [繁體中文](./README_zh-tw.md) • [Русский](./README_ru.md) • [日本語](./README_ja.md) • [Tiếng Việt](./README_vi.md) • [Français](./README_fr.md)
 
@@ -20,20 +19,18 @@
 
 ## 📌 Overview
 
-**Hajiyun API (https://hajiyun.top)** is a universal, enterprise-grade LLM relay and API gateway designed for high reliability, minimal latency, and zero prompt manipulation.
+**Hajiyun API (https://hajiyun.top)** is a universal LLM API relay and gateway platform designed for developers and global users. It provides a standardized OpenAI Chat Completions compatible endpoint with native streaming and transparent token metering.
 
-Whether you are building **autonomous AI coding agents** (Claude Code, Cursor, Hermes, Aider), powering **production applications and microservices** via standard Python/Node SDKs, running **desktop chat clients** (NextChat, Chatbox, LibreChat), or driving **long-context roleplay & creative storytelling** (SillyTavern), Hajiyun provides a unified OpenAI-compatible endpoint with transparent, pay-as-you-go token metering.
+The platform is designed to connect with clients and workflows supporting custom OpenAI Base URLs and Chat Completions (such as coding assistants, SDK integrations, desktop chat tools, and roleplay apps). Actual compatibility and feature support depend on client implementations and should be verified via testing.
 
 ---
 
-## 🌟 Why Hajiyun API?
+## 🌟 Key Features
 
-- 🛡️ **100% Raw & Unaltered (Zero Prompt Injection)**: We never inject advertisements, stealth instructions, or unwanted guardrails into your system prompts. What you send is exactly what the model processes.
-- ⚡ **Millisecond First-Token Latency (TTFT)**: Powered by dedicated dual-ISP residential egress networks, private upstream tunnels, and dynamic load balancing.
-- 🔓 **Safety Filtering Control (`BLOCK_NONE`)**: For creative writing, roleplay, and uncensored research benchmarks, safety filtering can be globally relaxed without false positive refusals.
-- 🔄 **Universal OpenAI-Compatible API**: One single endpoint (`https://hajiyun.top/v1`) works across 100+ AI clients, IDEs, and developer frameworks.
-- 💎 **Transparent USD Token Billing**: Real token usage metering in USD with zero hidden conversion losses. Instant complimentary testing balance upon registration.
-- 📊 **24/7 Real-Time Availability Matrix**: Verified continuous uptime monitoring via [Relay Pulse](https://hajiyun.top:8443).
+- 🛡️ **Transparent Forwarding**: Requests are forwarded per published service and privacy policies without arbitrary manipulation.
+- ⚡ **Optimized Routing & Streaming**: Direct SSE (Server-Sent Events) streaming architecture for responsive conversational flow.
+- 🔄 **OpenAI Chat Completions Compatible**: Standard `/v1/chat/completions` schema works across developer frameworks and compatible LLM clients.
+- 💎 **Transparent Token Accounting**: Usage and rates are tracked directly in USD; exact live pricing and quotas are displayed in the user console.
 
 ---
 
@@ -41,25 +38,24 @@ Whether you are building **autonomous AI coding agents** (Claude Code, Cursor, H
 
 | Resource | Address | Description |
 | :--- | :--- | :--- |
-| **Official Portal** | [https://hajiyun.top](https://hajiyun.top) | Web console, model playground & token management |
-| **API Base URL** | `https://hajiyun.top/v1` | Standard OpenAI-compatible API endpoint |
+| **Official Portal** | [https://hajiyun.top](https://hajiyun.top) | Web console, model catalog & token management |
+| **API Base URL** | `https://hajiyun.top/v1` | Standard OpenAI Chat Completions base endpoint |
+| **Chat Completions Endpoint** | `https://hajiyun.top/v1/chat/completions` | Full endpoint path for clients requiring direct URL |
 | **Multilingual Portals** | `/en/`, `/ru/`, `/ja/`, `/zh-tw/`, `/zh/`, `/vi/`, `/fr/` | Native localized landing pages |
-| **Status Dashboard** | [https://hajiyun.top:8443](https://hajiyun.top:8443) | Real-time Relay Pulse probe latency & uptime matrix |
-| **AI Crawler Manifest** | [https://hajiyun.top/llms.txt](https://hajiyun.top/llms.txt) | LLM and Generative Engine Optimization (GEO) spec |
+| **AI Crawler Spec** | [https://hajiyun.top/llms.txt](https://hajiyun.top/llms.txt) | LLM plain text specification (GEO standard) |
 
 ---
 
-## 🧠 Supported Models
+## 🧠 Supported Models & Availability
 
-| Provider | Model Identifier | Primary Use Cases |
-| :--- | :--- | :--- |
-| **Google** | `gemini-3.8-flash-high` | Ultra-fast token generation, long-context analysis, high-frequency agents |
-| **Google** | `gemini-3.7-flash-high` | Balanced coding, general reasoning, and high throughput |
-| **Google** | `gemini-3.1-pro-preview` | Deep reasoning, complex problem solving, structured outputs |
-| **Anthropic** | `claude-sonnet-4.6` | Benchmark-leading software engineering, instruction following |
-| **Anthropic** | `claude-opus-4.6` | Nuanced creative prose, deep analytical reasoning, philosophical dialogue |
-| **OpenAI** | `gpt-4o`, `o1`, `o3-mini` | Standard multimodal vision, math, and code generation |
-| **DeepSeek** | `deepseek-chat`, `deepseek-reasoner` | High-efficiency general reasoning and math thinking chains |
+> **Notice on Model Availability**:
+> Specific model availability, active model identifiers, pricing per million tokens, and rate limits are dynamically maintained. Always refer to your active [Hajiyun Console](https://hajiyun.top) after logging in for the authoritative, real-time list of available models.
+
+The gateway routes requests across major foundation model families supporting the Chat Completions format:
+- **Anthropic Claude Series**: (Check console for currently active models)
+- **Google Gemini Series**: High-throughput and multimodal reasoning models
+- **OpenAI Series**: General reasoning and conversation models
+- **DeepSeek Series**: High-efficiency reasoning and open-weights architecture models
 
 ---
 
@@ -69,9 +65,9 @@ Whether you are building **autonomous AI coding agents** (Claude Code, Cursor, H
 ```bash
 curl https://hajiyun.top/v1/chat/completions \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer sk-YOUR_HAJIYUN_KEY" \
+  -H "Authorization: Bearer sk-YOUR_HAJIYUN_API_KEY" \
   -d '{
-    "model": "gemini-3.8-flash-high",
+    "model": "YOUR_MODEL_ID_FROM_CONSOLE",
     "messages": [
       {"role": "user", "content": "Explain quantum entanglement in 2 sentences."}
     ],
@@ -82,17 +78,18 @@ curl https://hajiyun.top/v1/chat/completions \
 ### 2. Python (Official `openai` SDK)
 ```python
 from openai import OpenAI
+import os
 
 client = OpenAI(
-    api_key="sk-YOUR_HAJIYUN_KEY",
+    api_key=os.getenv("HAJIYUN_API_KEY", "sk-YOUR_HAJIYUN_API_KEY"),
     base_url="https://hajiyun.top/v1"
 )
 
 response = client.chat.completions.create(
-    model="claude-sonnet-4.6",
+    model="YOUR_MODEL_ID_FROM_CONSOLE",  # e.g., verified active model ID
     messages=[
         {"role": "system", "content": "You are an expert software architect."},
-        {"role": "user", "content": "Write an optimized LRU cache in Rust."}
+        {"role": "user", "content": "Write an optimized LRU cache in Python."}
     ],
     stream=True
 )
@@ -107,13 +104,13 @@ for chunk in response:
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-  apiKey: "sk-YOUR_HAJIYUN_KEY",
+  apiKey: process.env.HAJIYUN_API_KEY || "sk-YOUR_HAJIYUN_API_KEY",
   baseURL: "https://hajiyun.top/v1",
 });
 
 async function main() {
   const completion = await openai.chat.completions.create({
-    model: "gemini-3.8-flash-high",
+    model: "YOUR_MODEL_ID_FROM_CONSOLE",
     messages: [{ role: "user", content: "Hello from Hajiyun!" }],
   });
   console.log(completion.choices[0].message.content);
@@ -122,36 +119,28 @@ async function main() {
 main();
 ```
 
-### 4. AI Coding Agents & IDEs (Cursor / Windsurf / Claude Code / Hermes)
-- **OpenAI Base URL**: `https://hajiyun.top/v1`
-- **API Key**: `sk-YOUR_HAJIYUN_KEY`
-- **Model**: `claude-sonnet-4.6` or `gemini-3.8-flash-high`
-
-### 5. Chat Clients (NextChat / Chatbox / LibreChat)
-1. Navigate to **Settings** -> **Model Provider** -> **OpenAI**.
-2. Set **API Host / Base URL**: `https://hajiyun.top/v1`.
-3. Enter your **API Key**: `sk-...`.
-4. Select or type any supported model ID.
-
-### 6. SillyTavern (酒馆 / Roleplay Workflows)
-1. Open SillyTavern and open **API Settings** (Plug icon).
-2. Select **API**: `Chat Completion`, **Source**: `OpenAI`.
-3. Set **Custom Endpoint**: `https://hajiyun.top/v1`.
-4. Enter your API Key from Hajiyun console.
-5. Click **Connect** and pick `gemini-3.8-flash-high` or `claude-sonnet-4.6`.
+### 4. Compatible Clients & Tools (Supporting Custom Base URL)
+For developer tools, IDE extensions, chat UIs, and workflow agents supporting custom OpenAI Base URLs:
+- **Base URL**: `https://hajiyun.top/v1`
+- **API Key**: Generated `sk-...` from Hajiyun console
+- **Model ID**: Enter the exact model ID verified in your Hajiyun console
+*Note: Compatibility depends on specific client features and protocol compliance; users should conduct testing for their specific use cases.*
 
 ---
 
 ## ❓ Frequently Asked Questions (FAQ)
 
-#### Q1: Does Hajiyun modify or log conversation prompts?
-**No.** All communications are streamed transparently directly to upstream model clusters over TLS. No prompt caching, injection, or stealth manipulation occurs.
+#### Q1: How does Hajiyun handle request data and prompts?
+Requests are processed and forwarded in accordance with published terms of service and privacy policies. Data transmission uses TLS encryption.
 
-#### Q2: What payment methods are supported?
-We support both digital redemption vouchers (Alipay, WeChat, global digital exchange) and direct cryptocurrency funding (USDT-TRC20, Polygon, Arbitrum).
+#### Q2: Does Hajiyun support all OpenAI API endpoints?
+The primary protocol supported is **OpenAI Chat Completions** (`/v1/chat/completions`). Specialized endpoints (such as Realtime Audio, Assistants API, Fine-tuning, or native file management) are subject to upstream model capabilities and should be tested individually.
 
-#### Q3: Can I use Hajiyun in strict production environments?
-**Yes.** Hajiyun provides automated multi-egress failover, proactive rate-limit distribution, and 99.9% availability backed by active health probes.
+#### Q3: Are zero rate limits (429) or fixed SLAs guaranteed?
+No third-party gateway can promise zero rate limits or 100% uninterrupted uptime. Real-world latency and availability depend on upstream cluster load, token concurrency, network stability, and request length. Hajiyun monitors health proactively and routes traffic to maintain stability.
+
+#### Q4: Is Hajiyun an official service of Google or OpenAI?
+No. Hajiyun is an independent third-party API gateway and relay service. Mentions of model families are for compatibility and identification purposes only and do not imply official affiliation, endorsement, or benchmark certification by Google, OpenAI, or Anthropic.
 
 ---
 

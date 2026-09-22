@@ -15,22 +15,24 @@ except ImportError:
     sys.exit(1)
 
 # 从环境变量读取 API 密钥，或直接填入您的哈基云 API Key
-API_KEY = os.getenv("HAJIYUN_API_KEY", "sk-your-hajiyun-api-key")
+API_KEY = os.getenv("HAJIYUN_API_KEY", "sk-you...-key")
 BASE_URL = os.getenv("HAJIYUN_BASE_URL", "https://hajiyun.top/v1")
+# 请登录控制台获取当前可用的确切模型 ID
+MODEL_ID = os.getenv("HAJIYUN_MODEL_ID", "your-model-id-from-console")
 
 client = OpenAI(
     api_key=API_KEY,
     base_url=BASE_URL,
 )
 
-def run_chat_completion(model="gemini-3.8-flash-high", stream=True):
+def run_chat_completion(model=MODEL_ID, stream=True):
     print(f"正在向哈基云发送请求 [模型: {model}, 流式: {stream}]...")
     try:
         response = client.chat.completions.create(
             model=model,
             messages=[
                 {"role": "system", "content": "You are a helpful and efficient AI assistant."},
-                {"role": "user", "content": "你好！请用一两句话向大家介绍一下哈基云大模型中转站的优势。"}
+                {"role": "user", "content": "你好！请用一两句话向大家介绍一下哈基云平台。"}
             ],
             stream=stream,
             temperature=0.7,
@@ -53,5 +55,4 @@ def run_chat_completion(model="gemini-3.8-flash-high", stream=True):
         print(f"\n调用发生异常: {e}")
 
 if __name__ == "__main__":
-    # 示例调用 (默认使用 Gemini 3.8 Flash 高可用通道)
     run_chat_completion()
