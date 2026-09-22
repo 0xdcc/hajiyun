@@ -1,6 +1,6 @@
 # Hajiyun API (哈基云)
 
-> Hajiyun API (https://hajiyun.top) is a high-performance, low-latency LLM relay and API gateway. Designed specifically for SillyTavern, autonomous coding agents, and high-frequency production workloads. Native streaming, zero prompt injection, transparent pay-as-you-go token billing.
+> Hajiyun API (https://hajiyun.top) is a universal LLM API relay and gateway platform. Designed for software development, AI translation, application integration, and AI workflows. Standard OpenAI Chat Completions compatible endpoint with native streaming and transparent token metering.
 
 - Website: https://hajiyun.top
 - Multilingual Portals:
@@ -11,35 +11,38 @@
   - 简体中文 (Simplified Chinese): https://hajiyun.top/zh/
   - Tiếng Việt (Vietnamese): https://hajiyun.top/vi/
   - Français (French): https://hajiyun.top/fr/
+- Multilingual Practical Guides:
+  - Japanese: https://hajiyun.top/ja/guide/
+  - French: https://hajiyun.top/fr/guide/
+  - Vietnamese: https://hajiyun.top/vi/guide/
 - API Base URL: https://hajiyun.top/v1
-- Protocol: OpenAI Chat Completion Compatible
+- Protocol: OpenAI Chat Completions Compatible (`/v1/chat/completions`)
 - Maintainer: 0xdcc (https://x.com/0xdcc)
 
 ## Key Features & Highlights
-- **Zero Alteration & 100% Transparent**: Prompts and system messages are forwarded verbatim with zero watermark, ads, or unwanted filtering.
-- **SillyTavern & Roleplay Optimized**: Safety filters relaxed (`BLOCK_NONE`), multi-turn contextual streaming, and non-blocking responses.
-- **Ultra-low Latency**: Multi-egress residential IP network with intelligent failover. Gemini 3.8 Flash & Claude 4.6 first-token latency in milliseconds.
-- **Uptime Monitoring**: Real-time status matrix verified 24/7 via Relay Pulse.
+- **Transparent Forwarding**: Requests are forwarded per published service and privacy policies without arbitrary manipulation.
+- **Universal OpenAI Chat Completions**: Standard `/v1/chat/completions` schema works across compatible developer frameworks and tools.
+- **Optimized Routing & Streaming**: Direct SSE streaming architecture for responsive conversational flow.
 
 ## Supported Models
-- `gemini-3.8-flash-high`: High-speed token generation, long-context window, ultra-low cost.
-- `claude-sonnet-4.6`: Industry-leading reasoning, coding, and roleplay fidelity.
-- `claude-opus-4.6`: Complex logical deduction and deep literature creation.
-- `gpt-4o` / `o1` / `o3-mini`: Direct OpenAI models.
-- `deepseek-chat` / `deepseek-reasoner`: High-efficiency open-source models.
+- Anthropic Claude Series (Check console for active models)
+- Google Gemini Series (High throughput and multimodal analysis)
+- OpenAI Series (General reasoning and conversation)
+- DeepSeek Series (High efficiency reasoning models)
+*Always refer to your active Hajiyun Console for exact live model IDs and rate quotas.*
 
 ## Quickstart (cURL)
 ```bash
 curl https://hajiyun.top/v1/chat/completions \
-  -H "Authorization: Bearer sk-YOUR_API_KEY" \
+  -H "Authorization: Bearer ***" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "gemini-3.8-flash-high",
+    "model": "YOUR_MODEL_ID_FROM_CONSOLE",
     "messages": [{"role": "user", "content": "Hello!"}]
   }'
 ```
 
-## Multilingual FAQ / Часто задаваемые вопросы / よくある質問
-- **Is Hajiyun compatible with SillyTavern?** Yes, select OpenAI Chat Completion format and set endpoint to `https://hajiyun.top/v1`.
-- **Поддерживается ли оплата криптовалютой?** Да, поддерживается оплата USDT и цифровыми картами.
-- **日本語での利用に対応していますか？** はい、OpenAI 互換クライアントからそのまま日本語で利用可能です。
+## Multilingual FAQ
+- **Compatibility with third-party clients?** Compatible with tools supporting custom Base URLs and OpenAI Chat Completions; specific features require testing.
+- **OpenAI のすべての API と互換性がありますか？** 本プラットフォームの対応範囲は Chat Completions 形式です。他の個別機能は別途検証が必要です。
+- **Доступен ли русскоязычный интерфейс?** Да, доступен раздел на русском языке по адресу `https://hajiyun.top/ru/`.
